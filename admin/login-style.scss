@@ -1,0 +1,102 @@
+@import '../variables';
+
+* {
+  box-sizing: border-box;
+}
+
+.login {
+  background-color: $brand-color-5;
+  #login {
+    h1 {
+      a {
+        background: url( '../images/willsee-logo.png' );
+        width: 320px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-bottom: 0;
+      }
+    }
+    #nav,
+    #backtoblog {
+      text-align: center;
+      padding: 0;
+      a {
+        &:hover {
+          color: $brand-color-3;
+        }
+      }
+    }
+    #nav {
+      color: $brand-color-5;
+      a {
+        display: inline-block;
+        padding: 10px 0;
+        color: white;
+        width: 100%;
+        &:first-child {
+          background-color: $brand-color-1;
+        }
+        &:last-child {
+          background-color: #999;
+        }
+      }
+    }
+  }
+
+  #loginform {
+    background-color: lighten( $brand-color-5, 5% );
+    border: 3px solid $brand-color-1;
+    border-radius: 10px;
+    .user-pass-wrap {
+      .wp-pwd {
+        .button {
+          color: $brand-color-3;
+        }
+      }
+    }
+    .submit {
+      .button {
+        background: $brand-color-3;
+        border: none;
+      }
+    }
+  }
+
+  .message,
+  #login_error {
+    border-left: none;
+    box-shadow: none;
+  }
+  .message {
+    text-align: center;
+    border: 5px solid $brand-color-3;
+    font-size: 18px;
+    font-weight: bold;
+    color: $brand-color-3;
+  }
+  #login_error {
+    border: 5px solid $brand-color-1;
+    font-size: 16px;
+    strong {
+      color: $brand-color-1;
+    }
+    a {
+      margin-top: 10px;
+      text-align: center;
+      display: block;
+      padding: 10px 0;
+      color: white;
+      background-color: #999;
+    }
+  }
+}
+
+.login-action-register {
+  #login {
+    #nav {
+      a:first-child {
+        display: none;
+      }
+    }
+  }
+}

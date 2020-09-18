@@ -1,0 +1,327 @@
+@charset "UTF-8";
+/**
+Styles for content area
+ */
+.p-entry-content h2:not(.c-entry-summary__title) {
+  border-left: none;
+  background-color: transparent;
+  padding-left: 0;
+  line-height: 2; }
+  .p-entry-content h2:not(.c-entry-summary__title):after {
+    background-color: transparent;
+    content: '';
+    display: block;
+    background-image: url("images/border-bottom-pattern.png");
+    background-position: left bottom;
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 50%;
+    height: 10px; }
+.p-entry-content h3:not(.c-entry-summary__title) {
+  border-bottom: none; }
+  .p-entry-content h3:not(.c-entry-summary__title):before {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h3.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1em;
+    height: 1em;
+    margin-right: 10px; }
+.p-entry-content h4 {
+  border-bottom: none; }
+  .p-entry-content h4:before {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h4.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1em;
+    height: 1em;
+    margin-right: 6px; }
+.p-entry-content h5 {
+  border-bottom: none; }
+  .p-entry-content h5:before {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h5.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 1em;
+    height: 1em;
+    margin-right: 6px; }
+
+/**
+カスタム投稿:event関連
+ */
+.p-event-date {
+  padding: 5px;
+  text-align: center;
+  background-color: #FF4C65;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px; }
+
+.p-event-meta-list li {
+  display: inherit; }
+
+.p-event-icon {
+  display: inline-block;
+  background-color: #ccc;
+  color: white;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-right: 3px; }
+  .p-event-icon__management {
+    background-color: #2ea2cc; }
+  .p-event-icon__published {
+    background-color: #dad55e; }
+  .p-event-icon__modified {
+    background-color: #777777; }
+
+.p-group-meta {
+  text-align: left; }
+  .p-group-meta li {
+    display: block; }
+  .p-group-meta__title {
+    color: #FF4C65;
+    font-size: 12px;
+    font-weight: bold; }
+  .p-group-meta__item {
+    font-weight: normal; }
+
+/**
+search & filter
+ */
+/**
+search form
+ */
+.c-willsee-search__text {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px; }
+  .c-willsee-search__text input[type="text"] {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px; }
+    .c-willsee-search__text input[type="text"]:focus {
+      border: 2px solid #FF4C65; }
+.c-willsee-search__checkbox {
+  width: 100%;
+  margin-bottom: 20px; }
+.c-willsee-search__submit {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center; }
+  .c-willsee-search__submit input[type="submit"] {
+    width: 50%;
+    display: inline-block;
+    padding: 15px 0;
+    color: white;
+    background-color: #FF4C65;
+    border: none; }
+
+.p-willsee-search-input-area_event .smb-section__inner .c-container {
+  background-color: rgba(255, 195, 60, 0.25); }
+
+.p-willsee-search-input-area_group .smb-section__inner .c-container {
+  background-color: rgba(89, 196, 197, 0.25); }
+
+.p-willsee-search-input-area .smb-section__inner .c-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 20px; }
+  @media (min-width: 40em) {
+    .p-willsee-search-input-area .smb-section__inner .c-container {
+      margin-right: auto;
+      margin-left: auto; } }
+
+/**
+page template top padding
+ */
+.page-template .p-entry-content > *:first-child {
+  padding-top: 0; }
+
+/**
+top page buttons
+ */
+.p-willsee-top-buttons {
+  margin-top: 0 !important; }
+  .p-willsee-top-buttons .wp-block-button {
+    margin: 10px 0; }
+  .p-willsee-top-buttons .wp-block-buttons .wp-block-button:not(:first-child) {
+    margin-left: 0; }
+
+/**
+Event day on page header
+ */
+.p-event-day {
+  background-color: #FF4C65;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px; }
+
+/**
+Event information table
+ */
+.p-event-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2em; }
+  .p-event-table tr:first-child {
+    border-top: 1px solid #ccc; }
+  .p-event-table tr th,
+  .p-event-table tr td {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #ccc; }
+  .p-event-table tr th {
+    background-color: #f4f4f4; }
+  .p-event-table tr td {
+    padding-bottom: 50px; }
+  @media (min-width: 40em) {
+    .p-event-table tr th,
+    .p-event-table tr td {
+      display: table-cell;
+      width: auto; }
+    .p-event-table tr th {
+      width: 20%; }
+    .p-event-table tr td {
+      width: 80%;
+      padding-bottom: 15px; } }
+
+h2.p-willsee-sub-section {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 1.7em; }
+  h2.p-willsee-sub-section:before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: '';
+    display: inline-block;
+    background-image: url("images/h2.png");
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 1.5em;
+    height: 1.5em; }
+
+.wp-profile-box {
+  background-color: white;
+  border: 3px solid #59C4C5;
+  border-radius: 10px; }
+  .wp-profile-box__title {
+    border-width: 3px;
+    border-bottom-color: #59C4C5;
+    color: #3dadae; }
+  .wp-profile-box__container {
+    color: #555555; }
+  .wp-profile-box__name {
+    color: #59C4C5; }
+  .wp-profile-box__archives-btn {
+    border-width: 2px;
+    border-color: #59C4C5;
+    color: #59C4C5;
+    font-weight: bold; }
+
+.p-related-posts__title,
+.p-group-related-event__title {
+  color: #59C4C5; }
+  .p-related-posts__title:before, .p-related-posts__title:after,
+  .p-group-related-event__title:before,
+  .p-group-related-event__title:after {
+    content: '';
+    background-color: #59C4C5; }
+
+.p-group-field-label,
+.p-group-sdgs-label {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white; }
+
+.p-group-field-label {
+  background-color: #009fc5; }
+
+.p-group-sdgs-label {
+  background-color: #3dadae; }
+
+.p-group-related-event .c-entries--simple {
+  border-top: 0; }
+
+/**
+サイドバーのウィジェットタイトル
+ */
+.l-contents__sidebar .c-widget__title {
+  display: block;
+  text-align: left;
+  color: #555555;
+  font-size: 16px; }
+  .l-contents__sidebar .c-widget__title:before, .l-contents__sidebar .c-widget__title:after {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h3.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1em;
+    height: 1em; }
+.l-contents__sidebar .tagcloud a {
+  background-color: #fff; }
+
+/**
+団体検索ページ：最近登録された団体一覧
+ */
+.p-new-group-list > .snow-monkey-posts.snow-monkey-recent-posts > .c-entries .c-entry-summary__meta {
+  display: none; }
+
+/**
+グローバルナビ：マニュアル専用ボタン
+ */
+.p-global-nav .willsee-global-nav-manual-label > a {
+  background-color: #59C4C5;
+  color: white; }
+.p-global-nav .willsee-global-nav-manual-label:hover > a {
+  background-color: rgba(89, 196, 197, 0.95);
+  color: white; }
+.p-global-nav .willsee-global-nav-manual-label > .c-navbar__submenu {
+  background-color: #59C4C5; }
+  .p-global-nav .willsee-global-nav-manual-label > .c-navbar__submenu:before {
+    border-bottom-color: #59C4C5; }
+.p-global-nav .willsee-global-nav-manual-label[data-active-menu] > a {
+  background-color: rgba(89, 196, 197, 0.75);
+  color: white; }
+
+/**
+.willsee-first-view
+ */
+.willsee-first-view .wp-block-buttons .wp-block-button:first-child {
+  margin-bottom: 15px; }
+  @media (min-width: 40em) {
+    .willsee-first-view .wp-block-buttons .wp-block-button:first-child {
+      margin-bottom: 0; } }
+.willsee-first-view .wp-block-buttons .wp-block-button:not(:first-child) {
+  margin-left: 0; }
+@media (min-width: 40em) {
+  .willsee-first-view .wp-block-buttons .wp-block-button {
+    margin: 0 15px; } }
+
+/*# sourceMappingURL=style.css.map */

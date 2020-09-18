@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box; }
+
+.login {
+  background-color: #FBE2B4; }
+  .login #login h1 a {
+    background: url("../images/willsee-logo.png");
+    width: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 0; }
+  .login #login #nav,
+  .login #login #backtoblog {
+    text-align: center;
+    padding: 0; }
+    .login #login #nav a:hover,
+    .login #login #backtoblog a:hover {
+      color: #59C4C5; }
+  .login #login #nav {
+    color: #FBE2B4; }
+    .login #login #nav a {
+      display: inline-block;
+      padding: 10px 0;
+      color: white;
+      width: 100%; }
+      .login #login #nav a:first-child {
+        background-color: #FF4C65; }
+      .login #login #nav a:last-child {
+        background-color: #999; }
+  .login #loginform {
+    background-color: #fcebcc;
+    border: 3px solid #FF4C65;
+    border-radius: 10px; }
+    .login #loginform .user-pass-wrap .wp-pwd .button {
+      color: #59C4C5; }
+    .login #loginform .submit .button {
+      background: #59C4C5;
+      border: none; }
+  .login .message,
+  .login #login_error {
+    border-left: none;
+    box-shadow: none; }
+  .login .message {
+    text-align: center;
+    border: 5px solid #59C4C5;
+    font-size: 18px;
+    font-weight: bold;
+    color: #59C4C5; }
+  .login #login_error {
+    border: 5px solid #FF4C65;
+    font-size: 16px; }
+    .login #login_error strong {
+      color: #FF4C65; }
+    .login #login_error a {
+      margin-top: 10px;
+      text-align: center;
+      display: block;
+      padding: 10px 0;
+      color: white;
+      background-color: #999; }
+
+.login-action-register #login #nav a:first-child {
+  display: none; }
+
+/*# sourceMappingURL=login-style.css.map */

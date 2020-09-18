@@ -1,0 +1,59 @@
+h2:not(.c-entry-summary__title) {
+  border-left: none;
+  background-color: transparent;
+  padding-left: 0;
+  line-height: 2; }
+  h2:not(.c-entry-summary__title):after {
+    background-color: transparent;
+    content: '';
+    display: block;
+    background-image: url("images/border-bottom-pattern.png");
+    background-position: left bottom;
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 50%;
+    height: 10px; }
+
+h3:not(.c-entry-summary__title) {
+  border-bottom: none; }
+  h3:not(.c-entry-summary__title):before {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h3.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1em;
+    height: 1em;
+    margin-right: 10px; }
+
+h4 {
+  border-bottom: none; }
+  h4:before {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h4.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1em;
+    height: 1em;
+    margin-right: 6px; }
+
+h5 {
+  border-bottom: none; }
+  h5:before {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    background-image: url("images/h5.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 1em;
+    height: 1em;
+    margin-right: 6px; }
+
+/*# sourceMappingURL=editor-style.css.map */

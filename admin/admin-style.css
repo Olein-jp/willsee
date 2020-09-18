@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box; }
+
+.admin-dashboard-easy-access li a {
+  width: 100%;
+  display: inline-block;
+  background-color: #f4f4f4;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid #0073aa;
+  line-height: 30px;
+  font-size: 18px; }
+  .admin-dashboard-easy-access li a .dashicons {
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    font-size: 30px; }
+.admin-dashboard-easy-access li:first-child a {
+  background-color: #0073aa;
+  color: white; }
+
+/*# sourceMappingURL=admin-style.css.map */
