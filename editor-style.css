@@ -1,9 +1,9 @@
-h2:not(.c-entry-summary__title) {
+h2 {
   border-left: none;
   background-color: transparent;
   padding-left: 0;
   line-height: 2; }
-  h2:not(.c-entry-summary__title):after {
+  h2:after {
     background-color: transparent;
     content: '';
     display: block;
@@ -14,9 +14,9 @@ h2:not(.c-entry-summary__title) {
     width: 50%;
     height: 10px; }
 
-h3:not(.c-entry-summary__title) {
+h3 {
   border-bottom: none; }
-  h3:not(.c-entry-summary__title):before {
+  h3:before {
     content: '';
     background-color: transparent;
     display: inline-block;

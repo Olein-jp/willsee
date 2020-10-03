@@ -1,4 +1,4 @@
-h2:not(.c-entry-summary__title)  {
+h2 {
   border-left: none;
   background-color: transparent;
   padding-left: 0;
@@ -17,7 +17,7 @@ h2:not(.c-entry-summary__title)  {
   }
 }
 
-h3:not(.c-entry-summary__title) {
+h3 {
   border-bottom: none;
   &:before {
     content: '';

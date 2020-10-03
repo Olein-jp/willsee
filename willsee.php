@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin name: 岐阜市市民活動情報センター カスタマイズ専用プラグイン
- * Description: 岐阜市市民活動情報センター カスタマイズ専用プラグイン for Snow Monkey
+ * Plugin name: WILLSEE カスタマイズ専用プラグイン
+ * Description: WILLSEE カスタマイズ専用プラグイン for Snow Monkey
  * Version: 1.0.0
  */
 
@@ -106,7 +106,7 @@ function event_list_by_custom_field_daytime() {
 	);
 
 	$posts_array = get_posts( $args );
-	$html = '<ul class="c-entries c-entries--panel" data-force-sm-1col="true">';
+	$html = '<ul class="c-entries c-entries--panel p-willsee-near-event" data-force-sm-1col="true">';
 	foreach ( $posts_array as $post ) :
 		setup_postdata( $post );
 		$html .= '<li class="c-entries__item">';
@@ -119,7 +119,8 @@ function event_list_by_custom_field_daytime() {
 		$html .= '<header class="c-entry-summary__header">';
 		$html .= '<h3 class="c-entry-summary__title">' . get_the_title() . '</h3>';
 		$html .= '</header>';
-		$html .= '<p class="p-event-date">開催日：' . get_field( 'event-day' ) . '</p>';
+		$event_day = get_field( 'event-day' );
+		$html .= '<p class="p-event-date p-event-date_active">開催日：' . date( 'Y年m月d日', strtotime( $event_day ) ) . '</p>';
 		$html .= '<div class="c-entry-summary__content">' . get_the_excerpt() . '</div>';
 		$html .= '<div class="c-entry-summary__meta">';
 		$html .= '<ul class="c-meta p-event-meta-list">';

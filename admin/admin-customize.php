@@ -5,7 +5,7 @@
 function willsee_login_customize_script() {
 	wp_enqueue_style( 'willsee-login-customize-style', plugin_dir_url( __FILE__ ) . 'login-style.css' );
 
-	wp_enqueue_script( 'willsee-login-custom-script', plugin_dir_url( __FILE__ ) . 'login-script.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'willsee-login-customize-script', plugin_dir_url( __FILE__ ) . 'login-script.js', array( 'jquery' ), null, true );
 }
 add_action( 'login_enqueue_scripts', 'willsee_login_customize_script' );
 
@@ -14,6 +14,10 @@ add_action( 'login_enqueue_scripts', 'willsee_login_customize_script' );
  */
 function willsee_admin_customize_script() {
 	wp_enqueue_style( 'willsee-admin-customize-style', plugin_dir_url( __FILE__ ) . 'admin-style.css' );
+
+	if ( ! current_user_can( 'administrator' ) ) {
+		wp_enqueue_script( 'willsee-admin-customize-script', plugin_dir_url( __FILE__ ) . 'admin-script.js', array( 'jquery' ), null, true );
+	}
 }
 add_action( 'admin_enqueue_scripts', 'willsee_admin_customize_script' );
 
@@ -54,7 +58,7 @@ function willsee_custom_dashboard_widget() {
 	wp_add_dashboard_widget(
 		'willsee_dashboard_new_register_widget',
 		'団体情報登録・お問い合わせ',
-		'willsee_dashboard_new_register'
+		'willsee_dashboard_new_register',
 	);
 
 

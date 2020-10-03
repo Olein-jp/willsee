@@ -16,10 +16,15 @@ Styles for content area
 .p-event-date {
   padding: 5px;
   text-align: center;
-  background-color: $brand-color-1;
   color: #fff;
   font-weight: bold;
   border-radius: 5px;
+  &_active {
+    background-color: $brand-color-1;
+  }
+  &_passive {
+    background-color: #cccccc;
+  }
 }
 
 .p-event-meta-list {
@@ -47,6 +52,16 @@ Styles for content area
   }
 }
 
+.p-event-keyword {
+  display: inline-block;
+  border: 1px solid $brand-color-1;
+  padding: 3px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: $brand-color-1;
+  margin: 5px;
+}
+
 .p-group-meta {
   text-align: left;
   li {
@@ -61,25 +76,6 @@ Styles for content area
     font-weight: normal;
   }
 }
-/**
-search & filter
- */
-//.p-search-filter {
-//  ul {
-//    width: 100%;
-//    margin-left: 0;
-//    & > li {
-//      width: 100%;
-//      display: block;
-//      text-align: center;
-//      &:first-child {
-//        input {
-//          width: 300px;
-//        }
-//      }
-//    }
-//  }
-//}
 
 /**
 search form
@@ -124,21 +120,6 @@ search form
   }
 }
 
-
-//.c-willsee-search-form {
-//  ul {
-//    .sf-field-search {
-//      label {
-//        width: 100%;
-//        .sf-input-text {
-//          width: 100%;
-//          @extend .c-willsee-input-form;
-//        }
-//      }
-//    }
-//  }
-//}
-
 .p-willsee-search-input-area_event {
   .smb-section__inner {
     .c-container {
@@ -146,6 +127,7 @@ search form
     }
   }
 }
+
 .p-willsee-search-input-area_group {
   .smb-section__inner {
     .c-container {
@@ -153,6 +135,7 @@ search form
     }
   }
 }
+
 .p-willsee-search-input-area {
   .smb-section__inner {
     .c-container {
@@ -166,35 +149,6 @@ search form
         margin-left: auto;
       }
     }
-  }
-  .smb-section__title {
-    //position: relative;
-    //&:after {
-    //  content: none;
-    //  background-color: transparent;
-    //  margin-top: 0;
-    //}
-    //&:before,
-    //&:after {
-    //  position: absolute;
-    //  top: -3px;
-    //  content: '';
-    //  display: inline-block;
-    //  background-image: url( 'images/h2.png' );
-    //  background-size: 1.5em;
-    //  background-repeat: no-repeat;
-    //  background-position: left center;
-    //  width: 1.5em;
-    //  height: 1.5em;
-    //}
-    //&:before {
-    //  left: 50%;
-    //  margin-left: -5.6em;
-    //}
-    //&:after {
-    //  right: 50%;
-    //  margin-right: -5.6em;
-    //}
   }
 }
 
@@ -280,29 +234,6 @@ Event information table
 h2.p-willsee-sub-section {
   margin-bottom: 10px;
   position: relative;
-  padding-left: 1.7em;
-  //&:after {
-  //  content: none;
-  //  background-color: transparent;
-  //  margin-top: 0;
-  //}
-  &:before {
-    position: absolute;
-    top: 5px;
-    left: 0;
-    content: '';
-    display: inline-block;
-    background-image: url( 'images/h2.png' );
-    background-size: 1.5em;
-    background-repeat: no-repeat;
-    background-position: left center;
-    width: 1.5em;
-    height: 1.5em;
-  }
-  //&:after {
-  //  right: 50%;
-  //  margin-right: -5.6em;
-  //}
 }
 
 .wp-profile-box {
@@ -334,8 +265,20 @@ h2.p-willsee-sub-section {
     color: $brand-color-3;
     &:before,
     &:after {
+      background-color: transparent;
       content: '';
-      background-color: $brand-color-3;
+      display: block;
+      background-image: url(images/border-bottom-pattern.png);
+      background-position: left bottom;
+      background-size: contain;
+      background-repeat: repeat-x;
+      width: 50%;
+      height: 10px;
+    }
+  }
+  .c-entry-summary__title {
+    &:before {
+      display: none;
     }
   }
 }
@@ -460,5 +403,52 @@ h2.p-willsee-sub-section {
         margin: 0 15px;
       }
     }
+  }
+}
+
+
+/**
+近日開催予定イベント
+ */
+.p-willsee-near-event {
+  & > .c-entries__item {
+    .c-entry-summary__title {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+/**
+イベント情報検索結果
+ */
+.p-archive {
+  .c-entry-summary__title {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+/**
+トップ：お知らせ
+ */
+.p-willsee-news {
+  .c-entry-summary__title {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+/**
+コピーライトバー
+ */
+.c-copyright {
+  background-color: $brand-color-3;
+  color: white;
+  & > .c-container {
+    text-align: center;
   }
 }

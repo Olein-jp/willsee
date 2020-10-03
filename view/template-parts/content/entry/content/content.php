@@ -24,7 +24,11 @@ use Framework\Helper;
 			</tr>
 			<tr>
 				<th>イベント開催日時</th>
-				<td><?php the_field( 'event-day' ); ?>　<?php the_field( 'event-start-time' ); ?>〜<?php the_field( 'event-end-time' ); ?></td>
+				<td><?php
+					$event_day = get_post_meta( $post->ID, 'event-day', true );
+					echo date( 'Y年m月d日', strtotime( $event_day ) ); ?>　<?php the_field( 'event-start-time' ); ?>〜<?php the_field( 'event-end-time' );
+					?>
+				</td>
 			</tr>
 			<tr>
 				<th>開催場所</th>
@@ -107,20 +111,7 @@ use Framework\Helper;
 			<tr>
 				<th>主催</th>
 				<td>
-					<?php
-					$post = get_post( $post_id );
-					if ( $post ) {
-						$author_id = get_userdata( $post->post_author );
-					}
-					$args = array(
-						'author' => '$author_id',
-						'post_type' => 'group',
-					);
-					$the_query = new WP_Query( $args );
-					?>
-					<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<?php endwhile; endif; wp_reset_postdata(); ?>
+					<?php echo esc_html( get_the_author() ); ?>
 					<?php
 					$event_sponsor = get_field( 'event-sponsor' );
 					if ( $event_sponsor ) :
@@ -150,7 +141,7 @@ use Framework\Helper;
 					<a href="tel:<?php the_field( 'event-tel' ); ?>" class="p-event-contact-button">電話する</a>
 					<?php endif; ?>
 					<?php if ( $event_mail ) : ?>
-					<a href="mailto:<?php the_field( 'event-mail' ); ?>" class="p-event-contact-button">メールする</a>
+					<a href="mailto:<?php the_field( 'event-mail' ); ?>" class="p-event-contact-button">メールで問い合わせる</a>
 					<?php endif; ?>
 				</td>
 			</tr>
@@ -268,11 +259,9 @@ use Framework\Helper;
 
 		<?php
 		$post = get_post( $post_id );
-		if ( $post ) {
-			$author_id = get_userdata( $post->post_author );
-		}
+		$author_id = $post->post_author;
 		$args = array(
-			'author' => '$author_id',
+			'author' => $author_id,
 			'post_type' => 'event',
 			'posts_per_page' => 10,
 		);
@@ -299,14 +288,21 @@ use Framework\Helper;
 									<h3 class="c-entry-summary__title"><?php the_title(); ?></h3>
 								</header>
 
-
 								<div class="c-entry-summary__content"><?php the_excerpt(); ?></div>
 
-								<div class="c-entry-summary__meta">
-									<ul class="c-meta">
-										<li class="c-meta__item">開催日：<?php the_field( 'event-day' ); ?></li>
-									</ul>
-								</div>
+								<?php
+								date_default_timezone_set( 'Asia/Tokyo' );
+								$today = date( 'Ymd' );
+								$event_day = get_post_meta( $post->ID, 'event-day', true );
+								$add_css_class = '';
+								?>
+								<?php if ( strtotime($today) <= strtotime($event_day) ) {
+									$add_css_class = 'p-event-date_active';
+								} elseif( strtotime($today) > strtotime($event_day) ) {
+									$add_css_class = 'p-event-date_passive';
+								} ?>
+								<p class="p-event-date <?php echo $add_css_class; ?>">開催日：<?php echo date( 'Y年m月d日', strtotime( $event_day ) ); ?></p>
+
 							</div>
 						</section>
 					</a>

@@ -50,7 +50,18 @@ elseif ( is_post_type_archive( 'group' ) ) : ?>
  */
 else : ?>
 	<?php if ( get_post_type() === 'event' ) : ?>
-		<p class="p-event-date">開催日：<?php the_field( 'event-day' ); ?></p>
+	<?php
+	date_default_timezone_set( 'Asia/Tokyo' );
+	$today = date( 'Ymd' );
+	$event_day = get_post_meta( $post->ID, 'event-day', true );
+	$add_css_class = '';
+	?>
+	<?php if ( strtotime($today) <= strtotime($event_day) ) {
+		$add_css_class = 'p-event-date_active';
+	} elseif( strtotime($today) > strtotime($event_day) ) {
+		$add_css_class = 'p-event-date_passive';
+	} ?>
+	<p class="p-event-date <?php echo $add_css_class; ?>">開催日：<?php echo date( 'Y年m月d日', strtotime( $event_day ) ); ?></p>
 	<div class="c-entry-summary__meta">
 		<ul class="c-meta">
 			<li class="c-meta__item c-meta__item--author">
